@@ -23,12 +23,13 @@ end
 if c == 3
     im = rgb2gray(im);
 end
+im = double(im) / 255;
 
 g = imfilter(im, filter);
 pt = zeros(m, n);
 
 if ~exist('thres', 'var')
-    thres = 50;
+    thres = 0.25 * max(g(:));
 end
 
 pt(g > thres) = 1;

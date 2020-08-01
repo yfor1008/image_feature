@@ -67,5 +67,9 @@ if ~exist('thres', 'var')
 end
 
 et(g > thres) = 1;
+et(1, :) = 0;
+et(end, :) = 0;
+et(:, 1) = 0;
+et(:, end) = 0;
 
 end
